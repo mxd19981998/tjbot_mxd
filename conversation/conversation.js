@@ -41,7 +41,15 @@ console.log("You can also say, \"" + tj.configuration.robot.name + ", tell me a 
 
 // listen for utterances with our attentionWord and send the result to
 // the Assistant service
-tj.listen(function(msg) {
+
+
+const readline = require('readline');  
+const rl = readline.createInterface({  
+    input: process.stdin,  
+    output: process.stdout  
+});  
+var inputArr = [];  
+rl.on('line', function (msg) {  
     // check to see if they are talking to TJBot
     if (msg.toLowerCase().startsWith(tj.configuration.robot.name.toLowerCase())) {
         // remove our name from the message
