@@ -6,7 +6,7 @@
 *  Your password is the smaller value: 12 characters
 */
 
-exports.workspaceId = '0946e104-802d-4f2a-924b-c891e9d5bba0'; // replace with the workspace identifier of your conversation
+exports.workspaceId = '5a82c379-7425-4e1c-a8d3-d1746e17db9f'; // replace with the workspace identifier of your conversation
 
 // Set this to false if your TJBot does not have a camera.
 exports.hasCamera = false;
@@ -33,7 +33,7 @@ exports.credentials.assistant = {
     // username: '',
     // password: '',
     // IAM authentication -- fill in your API key below
-    apikey: 'B6QGGjPzRbDmjzdTyj9caDqi0J_jMIScqh3glbHMKc2G',
+    apikey: 'Xby12G1wZ2crHVYZatLoWgRN-9NovkWqQPSy8JiTaY1z',
     // service URL -- change this if the URL is different in your authentication credentials
     url: 'https://gateway-wdc.watsonplatform.net/assistant/api'
 };
