@@ -49,9 +49,10 @@ const rl = readline.createInterface({
     output: process.stdout  
 });  
 var inputArr = [];  
-rl.on('line', function (msg) {  
+rl.on('line', function (msg) {
+    console.log(msg)  
     // check to see if they are talking to TJBot
-    if (msg.toLowerCase().startsWith(tj.configuration.robot.name.toLowerCase())) {
+    if (msg.toLowerCase().startsWith(tj.configuration.robot.name.toLowerCase()) || 1) {
         // remove our name from the message
         var turn = msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), "");
         
@@ -60,7 +61,8 @@ rl.on('line', function (msg) {
         // send to the assistant service
         tj.converse(WORKSPACEID, utterance, function(response) {
             var spoken = false;
-            
+            console.log(response.object.intents);
+            console.log(msg)
             // check if an intent to control the bot was found
             if (response.object.intents != undefined) {
                 var intent = response.object.intents[0];
