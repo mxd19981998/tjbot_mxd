@@ -1,7 +1,6 @@
 var request = require('request-promise');
 
 function requestWeatherInfo (apiKey, lat, lon) {
-    console.log("mxd_stop_point_007");
     console.log('https://api.darksky.net/forecast/' + apiKey + '/' + lat + ',' + lon);
     return request({
         uri : 'https://api.darksky.net/forecast/' + apiKey + '/' + lat + ',' + lon,
@@ -29,6 +28,8 @@ function parseWeatherInfo (info) {
 
         highestTemperature = Math.max(hourlyPrediction.apparentTemperature, highestTemperature);
     }
+    console.log("temperature: "+temperature);
+    console.log("chanceOfRain: "+chanceOfRain);
 
     return {
         summary : info.hourly.summary,
@@ -36,20 +37,16 @@ function parseWeatherInfo (info) {
         chanceOfRain : highestRainChance
     };
 }
-console.log("mxd_stop_point_003");
 
 function getWeather (lat, lon) {
-    console.log("mxd_stop_point_004");
 
     var apiKey = process.env.DARKSKY_APIKEY;
     if (!apiKey) {
         console.log('Need to set DARKSKY_APIKEY');
         throw new Error('Need to set DARKSKY_APIKEY');
     }
-    console.log("mxd_stop_point_005");
     return requestWeatherInfo(apiKey,lat, lon)
         .then(function (response) {
-            console.log("mxd_stop_point_006");
             return parseWeatherInfo(response);
         });
 }

@@ -73,10 +73,8 @@ function getArmPosition (temperature) {
 
 
 // get the current weather forecast for home!
-console.log("mxd_stop_point_001");
 weather.getWeather(LATITUDE, LONGITUDE)
     .then(function (info) {
-        console.log("mxd_stop_point_002");
 
         // weather info should look like this:
         //
