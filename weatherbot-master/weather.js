@@ -28,8 +28,8 @@ function parseWeatherInfo (info) {
 
         highestTemperature = Math.max(hourlyPrediction.apparentTemperature, highestTemperature);
     }
-    console.log("temperature: "+temperature);
-    console.log("chanceOfRain: "+chanceOfRain);
+    console.log("temperature: "+highestTemperature);
+    console.log("chanceOfRain: "+highestRainChance);
 
     return {
         summary : info.hourly.summary,
