@@ -16,6 +16,11 @@
  *
  *  by Dale & Grace
  */
+//var config = require('./config');
+
+// obtain our credentials from config.js
+//var apikey = config.apikey;
+
 
 // We need this to wait for the program to finish
 var sleep = require('sleep').sleep;
@@ -37,8 +42,8 @@ var TEMPERATURE_LOW = 0;
 var TEMPERATURE_HIGH = 30;
 
 // where do we want the weather for?
-var LATITUDE = 37.8267;
-var LONGITUDE = -122.4233;
+var LATITUDE = 26.3683;
+var LONGITUDE = 80.1289;
 
 
 
@@ -68,8 +73,11 @@ function getArmPosition (temperature) {
 
 
 // get the current weather forecast for home!
+console.log("mxd_stop_point_001");
 weather.getWeather(LATITUDE, LONGITUDE)
     .then(function (info) {
+        console.log("mxd_stop_point_002");
+
         // weather info should look like this:
         //
         //    info.summary == "description of the weather"
