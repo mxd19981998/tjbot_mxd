@@ -15,7 +15,7 @@
   "dependencies": {
     "tjbot": "latest",
     "fast-csv": "latest",
-    "express": "^4.13.3",
+    "express": "^4.17.3",
     "body-parser": "~1.0.1"
   }
 }
